@@ -1,7 +1,15 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const userProgramSchema = new mongoose.Schema({
-  program: {
+  isStageProgram: {
+    type: Boolean,
+    required: true,
+  },
+  isGroupProgram: {
+    type: Boolean,
+    required: true,
+  },
+  programName: {
     type: String,
     required: true,
   },
@@ -27,25 +35,57 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-const User = mongoose.model("User", userSchema);
+export const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+
+const shortUserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  age: Number,
+  parentName: String,
+});
+
+const groupDetailSchema = new mongoose.Schema({
+  groupName: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  groupMembers: [shortUserSchema]
+});
 
 const programSchema = new mongoose.Schema({
+  isStageProgram: {
+    type: Boolean,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
     trim: true,
     unique: true,
   },
-  type: {
-    type: String,
+  isGroupProgram: {
+    type: Boolean,
     required: true,
   },
-  groupName: String,
-  groupMembers: [],
+  groupDetails: [groupDetailSchema],
+  participants: [shortUserSchema],
+  price: {
+    first: {
+      groupName: String,
+      groupMembers: [shortUserSchema],
+      indivitualUsers: [shortUserSchema]
+    },
+    second: {
+      groupName: String,
+      groupMembers: [shortUserSchema],
+      indivitualUsers: [shortUserSchema]
+    },
+  },
 });
 
-const Program = mongoose.model("Program", programSchema);
+export const Program = mongoose.model("Program", programSchema);
 
-module.exports = Program;
