@@ -9,6 +9,9 @@ const userProgramSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  GroupName: {
+    type: String
+  },
   programName: {
     type: String,
     required: true,
@@ -23,12 +26,13 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique:true
   },
   age: {
     type: Number,
   },
   parentName: {
-    type: Number,
+    type: String,
   },
   participatedPrograms: {
     type: [userProgramSchema],
@@ -51,7 +55,6 @@ const groupDetailSchema = new mongoose.Schema({
   groupName: {
     type: String,
     required: true,
-    unique: true,
   },
   groupMembers: [shortUserSchema]
 });
@@ -61,7 +64,7 @@ const programSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  name: {
+  programName: {
     type: String,
     required: true,
     trim: true,
