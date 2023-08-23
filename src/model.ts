@@ -9,7 +9,7 @@ const userProgramSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
-  GroupName: {
+  groupName: {
     type: String
   },
   programName: {
@@ -92,3 +92,22 @@ const programSchema = new mongoose.Schema({
 
 export const Program = mongoose.model("Program", programSchema);
 
+
+
+// "participants": [
+//   {
+//       "name": "Kallu",
+//       "age": 10,
+//       "parentName": "Ravi"
+//   },
+//   {
+//       "name": "Rakendhu",
+//       "age": 10,
+//       "parentName": "Santhosh"
+//   },
+//   {
+//       "name": "Dhyan",
+//       "age": 7,
+//       "parentName": "Ratheesh"
+//   }
+// ]

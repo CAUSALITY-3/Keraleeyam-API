@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "ff3a04d3-1dda-4c4d-ad84-6c0f2c6fa38a",
+		"name": "Keraleeyam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Program",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isStageProgram\": true,\r\n    \"programName\": \"Single dance\",\r\n    \"isGroupProgram\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/addProgram",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"addProgram"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Program",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isStageProgram\": false,\r\n    \"programName\": \"Single Dance\",\r\n    \"isGroupProgram\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/deleteProgram",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"deleteProgram"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Group",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"groupName\": \"Manus Team\",\r\n    \"programName\": \"Kamba vali\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/deleteGroup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"deleteGroup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Group Member",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"groupName\": \"Sachus Team\",\r\n    \"programName\": \"Kamba vali\",\r\n    \"user\": {\r\n        \"name\": \"Minnu\",\r\n        \"age\": 10,\r\n        \"parentName\": \"Ganu\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/deleteGroupMember",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"deleteGroupMember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Individual Member",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"programName\": \"Single dance\",\r\n    \"user\": {\r\n        \"name\": \"Cheeru\",\r\n        \"age\": 8,\r\n        \"parentName\": \"Chan\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/deleteIndividualMember",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"deleteIndividualMember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Cheeru\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/deleteUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"deleteUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get full data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isStageProgram\": true,\r\n    \"programName\": \"Group \",\r\n    \"isGroupProgram\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/fullData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"fullData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create individual program",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isStageProgram\": true,\r\n    \"programName\": \"Single Dance\",\r\n    \"isGroupProgram\": false\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMembers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"programName\": \"Kamba vali\",\r\n    \"member\": {\r\n        \"name\": \"paru\",\r\n        \"age\": 8,\r\n        \"parentName\": \"Chan\"\r\n    },\r\n    \"isStageProgram\": true,\r\n    \"isGroupProgram\":true,\r\n    \"groupName\": \"Manus Team\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/addMember",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"addMember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMembers individual",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"programName\": \"Single dance\",\r\n    \"member\": {\r\n        \"name\": \"Cheeru\",\r\n        \"age\": 8,\r\n        \"parentName\": \"Chan\"\r\n    },\r\n    \"isStageProgram\": true,\r\n    \"isGroupProgram\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/addMember",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"addMember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addGroup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"programName\": \"Kamba vali\",\r\n    \r\n    \"groupName\": \"Manus Team\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/addGroup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"addGroup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setPrice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isStageProgram\": true,\r\n    \"programName\": \"Single Dance\",\r\n    \"isGroupProgram\": false,\r\n    \"second\": \"Cheeru\",\r\n    \"first\" : \"Biju\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/program/setPrice",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"program",
+						"setPrice"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
